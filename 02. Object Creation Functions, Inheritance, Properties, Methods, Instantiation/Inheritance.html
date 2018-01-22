@@ -46,8 +46,13 @@
    document.write("The lenth of the employee name is: ", pe.getNameLength(), "<br>");
 
    //Test to see if pe is related to Employee or PermanentEmployee.
-   document.write("<br>Is 'pe' related to Employee? ", pe instanceof Employee);
-   document.write("<br>What about PermanentEmployee? ", pe instanceof PermanentEmployee);
+   document.write("Is 'pe' related to Employee? ", pe instanceof Employee, "<br>");
+   document.write("What about PermanentEmployee? ", pe instanceof PermanentEmployee, "<br><br>");
+
+   //Test to see if employee has specific properties
+   document.write("Does employee.name exist? ", employee.hasOwnProperty('name'), "<br>");
+   document.write("Does employee.annualSalary exist? ", employee.hasOwnProperty('annualSalary'), "<br>");
+   document.write("Does employee.annualSalary exist? ", employee.hasOwnProperty('annualSalary'), "<br>");
 
 </script>
 
