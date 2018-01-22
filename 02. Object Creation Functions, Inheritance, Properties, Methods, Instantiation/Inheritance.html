@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+<h2>Inheritance</h2>
+<p id="name1">Name<p>
+<script>
+var Person = function()
+{
+   this.name = name;
+};
+
+Person.prototype.sayName = function(){return "Hi my name is " + this.name};
+
+var jacob = new Person("jacob");
+var matthew = new Person("matthew");
+document.getElementById("name1").innerHTML = jacob.name;
+</script>
+
+
+
+</body>
+</html>

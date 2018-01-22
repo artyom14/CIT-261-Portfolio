@@ -12,7 +12,8 @@
 
    //Print to screen
    document.write("Hello World!<br>"); // newline with <br>
-   document.write("Print to the screen with 'document.write()<br><br>")
+   document.write("Hit 'F12' to view html-javascript code in browser.<br>");
+   document.write("Print to the screen with 'document.write()'<br><br>")
    
    //Variables - must start with a letter or underscore; numbers can follow
    var myNum = 1.75;
@@ -48,6 +49,42 @@
    document.write("myNum multiplied to itself: ", myNum*myNum, "<br>");
    document.write("myNum value remains: ", myNum, "<br>");
    
+   //FOR loop with 'let' declaration
+   document.write("Counter with FOR loop and let declaration:<br>");
+   for (let i = 0; i < 10; i++) 
+   {
+      document.write(i," ");
+   }
+   document.write("<br>");
+
+   //WHILE loop with 'let' declaration
+   document.write("Counter with WHILE loop and let declaration:<br>");
+   let i = 0 //is reassigned because it was instantiated in the for-loop
+   while (i < 10) 
+   {
+      document.write(i," ");
+      i++;
+   }
+   
+   document.write("<br>");
+
+   //DO..WHILE loop with 'let' declaration
+   document.write("Counter with DO..WHILE loop and let declaration:<br>");
+   i = 0
+   do 
+   {
+      document.write(i," ");
+      i++;
+   }
+   while (i < 10);
+   document.write("<br>");
+
+   //Declaring a 'const' when a value must not change; (e.g. pi=3.14, atm=14.7)
+   const pi = 3.14;
+   document.write("What is the area of a circle with a radius r=20?<br>");
+   let r = 20;
+   let area = pi * (r * r);
+   document.write("The area is: ", area, "<br>");
 //-->
 </script>
 
