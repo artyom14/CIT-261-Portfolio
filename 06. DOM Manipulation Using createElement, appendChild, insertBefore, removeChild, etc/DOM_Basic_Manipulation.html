@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+    <h3>DOM Manipulation</h3>
+    <strong>Study Sources:</strong><br />
+    <a href="https://www.w3schools.com/js/js_htmldom.asp">W3Schools - JavaScript HTML DOM</a>
+    <a href="https://www.w3schools.com/js/js_htmldom_document.asp">W3Schools - DOM Interaction with Elements</a>
+    <p><b>DOM - Document Object Model</b> is created when a web page is loaded by the browser.</p>
+    <p>
+        With DOM, HTML elements and attributes can be created, edited, retrieved and deleted. HTML elements and attributes include: <br />
+        <ul><li>Head</li><li>Title</li><li>Body</li><li>Anchors</li><li>Headings</li><li>HTML Tags</li></ul>
+    </p>
+    <p>With DOM, we can program various types of event handlers.</p>
+
+    <h4>Simple DOM getElementById and innerHTML methods</h4>
+    <p id="demoDId">This text is replaced by DOM reassignment script.</p>
+    <script>document.getElementById("demoDId").innerHTML = "This text was inserted using DOM getElementById and innerHTML.";</script>
+    <hr />
+    <h4>DOM querySelectorAll</h4>
+    <p class="findMe">Waldo</p>
+    <p id="demoDTag">TEXT</p>
+
+    <script>
+        var tagVal = document.querySelectorAll("p.findMe");
+        document.getElementById("demoDTag").innerHTML = "Found " + tagVal[0].innerHTML + " with querySelectorAll!";
+    </script>
+    <hr />
+
+
+</body>
+</html>
