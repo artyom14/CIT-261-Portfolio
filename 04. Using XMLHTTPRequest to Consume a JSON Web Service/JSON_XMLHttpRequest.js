@@ -2,9 +2,8 @@
 
 //Declare new object as XMLHttpRequest().
 var xmlhttp = new XMLHttpRequest();
-
 //Declare string object for 'server' text data .txt file
-var url = "httpRequestData.txt";
+var url = "httpRequestData.json";
 
 /*When the readystate attribute changes, the onreadystatechange event handler
   Syntax: XMLHttpRequest.onreadystatechange = callback;
