@@ -7,9 +7,11 @@ function doFirst() {
     var saveButton = document.getElementById("saveButton");
     var remButton = document.getElementById("remButton");
     var clrButton = document.getElementById("clrButton");
+    var loadButton = document.getElementById("loadButton");
     saveButton.addEventListener("click", saveInfo, false);
     remButton.addEventListener("click", removeInfo, false);
     clrButton.addEventListener("click", clearLocalStore, false);
+    loadButton.addEventListener("click", preLoad, false);
     display();
 }
 function saveInfo() {
@@ -22,6 +24,7 @@ function saveInfo() {
 }
 function arrayStore() {
     var rightbox = document.getElementById("rightbox");
+    //clear associative array
     storeArry = {};
     rightbox.innerHTML = "";
     for (i = 0; i < localStorage.length; i++) {
@@ -33,12 +36,12 @@ function arrayStore() {
 function display() {
     arrayStore();
     rightbox.innerHTML = "<strong>Local Storage Items:</strong><br />";
-    for (var j in storeArry) {
+    for (let j in storeArry) {
         rightbox.innerHTML += j + ": " + storeArry[j] + "<br />";
     }
 }
 function removeInfo() {
-    var r = document.getElementById("person").value;
+    let r = document.getElementById("person").value;
     localStorage.removeItem(r);
     display();
 }
@@ -46,4 +49,24 @@ function clearLocalStore() {
     localStorage.clear();
     display();
 }
+
+function preLoad() {
+    // create an array with persons and ages
+    var localArry = ["Julian", 35, "Bedh", 36, "Joshua", 11, "JJ", 12];
+    var rightbox = document.getElementById("rightbox");
+
+    //load the local array to local storage
+    for (i = 0; i < localArry.length;i++) {
+        let a = localArry[i++];
+        let b = localArry[i];
+        localStorage.setItem(a, b);
+    }
+
+    //add one item as an object
+    let p = "Nelson";
+    let a = "93";
+    localStorage.setItem(p, a);
+    display();
+}
+
 window.addEventListener("load", doFirst, false);
