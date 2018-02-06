@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        #text {
+            width: 450px;
+            height: 30px;
+            color: deeppink;
+        }
+        #myDIV {
+            width: 300px;
+            height: 300px;
+            background-color: coral;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Manipulate CSS Class using JavaScript</h2>
+    <p>CSS Class can be changed using DOM in JavaScript.</p>
+    <hr />
+    <h3>Change basic HTML Style</h3>
+    <div id="text" onclick="changeColor()">Please <em><b>click me</b></em> to change my color and font.</div>
+    <button type="button" onclick="hideMe()">Hide</button>
+    <button type="button" onclick="showMe()">Show</button>
+    <script>
+        //Global objects containing CSS style values.
+        var i = 0;
+        var colors = ['blue', 'red', 'gold', 'orange', 'purple'];
+        var fonts = ['Sans-serif', 'Verdana', 'Times New Roman', 'Courier New', 'Lucida Console'];
+        function changeColor() {
+            if (i > colors.length) { i = 0; }
+            document.getElementById("text").style.color = colors[i];
+            document.getElementById("text").style.fontFamily = fonts[i];
+            i++;
+        }
+        function hideMe() {
+            document.getElementById("text").style.visibility = "hidden";
+        }
+        function showMe() {
+            document.getElementById("text").style.visibility = "visible";
+        }
+    </script>
+    <hr />
+    <button onclick="bgColor()">Try it</button>
+
+    <div id="myDIV">
+        <h1>Change my background color!</h1>
+    </div>
+
+    <script>
+        function bgColor() {
+            document.getElementById("myDIV").style.backgroundColor = "deeppink";
+        }
+    </script>
+
+</body>
+</html>
