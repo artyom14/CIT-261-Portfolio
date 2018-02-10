@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Transtions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#549999">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/cayman.css">
+</head>
+<body>
+    <section class="page-header">
+        <h1 class="project-name">CSS3 Transitions, Transforms, and Animation</h1>
+        <h2 class="project-tagline">
+            CIT 261
+        </h2>
+    </section>
+
+    <section class="main-content">
+        <h2>
+            <a id="user-content-header-1" class="anchor" href="#header-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS3 Transitions
+        </h2>
+
+        <p>CSS3 Transitions allow you to change the values of properties seemlessly over a specified duration</p>
+        <p><strong>Example:</strong> Hover over the box below to see CSS3 transition effect on an element.</p>
+
+        <div class="transition1">CSS3 Transition</div>
+
+        <h2>
+            <a id="user-content-header-1" class="anchor" href="#header-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS3 Transforms
+        </h2>
+
+        <p>CSS3 Transforms allow you to skew, rotate, scale, and translate elements. This effect allows elements to change size, shape, and position in both 2D and 3D. </p>
+        <p><strong>Example:</strong> The first box is a normal div element. The second has the Transform method rotate() applied to it. </p>
+
+        <div class="transf2D1">This is a normal div element</div>
+        <br>
+        <div class="transf2D2">This div element uses the transform method called rotate() to rotate the element by 120 degrees</div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>
+            <a id="user-content-header-1" class="anchor" href="#header-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Combine It All Together
+        </h2>
+
+
+
+        <p>Hover to see what happens when you combine Transition, Transform, and Animation into one element. </p>
+        <div class="finalbox">Final Product! </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <p>Finally, see what happens when Transition, Transform, and Animation are triggered with Javascript.</p>
+
+        <script>
+		function changeBox1(){
+			var d = document.getElementById("jsbox");
+			d.className = "anim2";
+
+		}
+
+        </script>
+        <button onclick="changeBox1('jsbox');">Click Here to Change The Box</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id="jsbox" class="anim1">Triggering Transitions with JavaScript</div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </section>
+
+</body>
+</html>

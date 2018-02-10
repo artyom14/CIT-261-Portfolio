@@ -17,21 +17,40 @@
         <li><strong>window.localStorage</strong> : stores data with no expiration date</li>
         <li><strong>window.sessionStorage</strong> : stores data for one session (data is lost when the browser tab is closed)</li>
     </ul>
+    <hr />
+
+    <form>
+        <p class="demo"></p>
+        <script>
+            localStorage.setItem('CIT261', ['is', 'a', 'fun', 'class']);
+            var arryNelson = localStorage.getItem("CIT261").split(',');
+            document.write("The local storage key value at for CIT261: "
+                + arryNelson
+                + "<br /> arryNelson[0] = " + arryNelson[0]
+                + "<br /> arryNelson[1] = " + arryNelson[1]
+                + "<br /> arryNelson[2] = " + arryNelson[2]
+                + "<br /> arryNelson[3] = " + arryNelson[3]);
+        </script>
+    </form>
+    <hr />
+
     <h3>Local Storage Example</h3>
     <section id="leftbox">
         <form>
             <p>Name (key): <input type="text" id="person" /></p>
             <p>Age (value): <input type="text" id="age" /></p>
             <p>
-                <input type="button" id="saveButton" value="Save Item" title="Save Name and Age to Local Storage"/>
-                <input type="button" id="remButton" value="Remove Item" title="Remove Item by Name Entered from Local Storage"/>
-                <input type="button" id="clrButton" value="Clear Items" title="Clear Local Storage Items"/>
-                <input type="button" id="loadButton" value="PreLoad Items" title="Preload Items into Local Storage"/>
+                <input type="button" id="saveButton" value="Save Item" title="Save Name and Age to Local Storage" />
+                <input type="button" id="remButton" value="Remove Item" title="Remove Item by Name Entered from Local Storage" />
+                <input type="button" id="clrButton" value="Clear Items" title="Clear Local Storage Items" />
+                <input type="button" id="loadButton" value="PreLoad Items" title="Preload Items into Local Storage" />
             </p>
         </form>
     </section>
     <section id="rightbox">
         Stored Data
     </section>
+
+
 </body>
 </html>

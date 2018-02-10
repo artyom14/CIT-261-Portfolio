@@ -62,11 +62,12 @@ function preLoad() {
         localStorage.setItem(a, b);
     }
 
-    //add one item as an object
+    //add one item as an object with an array
     let p = "Nelson";
-    let a = "93";
+    let a = ["Love", "all", "men", 93];
     localStorage.setItem(p, a);
     display();
 }
+
 
 window.addEventListener("load", doFirst, false);
