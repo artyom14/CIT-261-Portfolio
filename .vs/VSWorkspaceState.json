@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\05. Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects",
-    "\\06. DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc",
-    "\\06. DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc\\Advanced",
-    "\\06. DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc\\Basic",
     "\\07. Manipulating CSS Class Properties Using JavaScript"
   ],
   "SelectedNode": "\\07. Manipulating CSS Class Properties Using JavaScript\\CSS_Class_Manip.html",

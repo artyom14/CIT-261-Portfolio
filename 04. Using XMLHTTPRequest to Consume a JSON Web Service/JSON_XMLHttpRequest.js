@@ -3,7 +3,7 @@
 //Declare new object as XMLHttpRequest().
 var xmlhttp = new XMLHttpRequest();
 //Declare string object for 'server' text data .txt file
-var url = "httpRequestData.json";
+var url = "https://romero-julian.github.io/CIT-261-Portfolio/04.%20Using%20XMLHTTPRequest%20to%20Consume%20a%20JSON%20Web%20Service/httpRequestData.json";
 
 /*When the readystate attribute changes, the onreadystatechange event handler
   Syntax: XMLHttpRequest.onreadystatechange = callback;
