@@ -21,9 +21,11 @@ div#memory_board {
     background: url(Mario_bg.png) no-repeat center;
     border: #000 1px solid;
     margin: auto;
+    padding: 20px;
     width: 530px;
     height: 530px;
     position: center;
+
 }
 .flip3d {
 }
