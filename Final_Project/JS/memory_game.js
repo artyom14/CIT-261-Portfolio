@@ -53,11 +53,11 @@ function memoryFlipcard(card, val) {
                     var card_1 = document.getElementById(memory_card_ids[0]);
                     var card_2 = document.getElementById(memory_card_ids[1]);
                     card_1.style.background = 'url(./CSS/Paper_Mario_Cards.png) no-repeat center';
-                    card_1.style.backgroundSize = '71px';
+                    card_1.style.backgroundSize = '70px';
                     card_1.style.backgroundColor = 'royalblue';
                     card_1.innerHTML = "";
                     card_2.style.background = 'url(./CSS/Paper_Mario_Cards.png) no-repeat center';
-                    card_2.style.backgroundSize = '71px';
+                    card_2.style.backgroundSize = '70px';
                     card_2.style.backgroundColor = 'royalblue';
                     card_2.innerHTML = "";
                     //Clear both arrays
