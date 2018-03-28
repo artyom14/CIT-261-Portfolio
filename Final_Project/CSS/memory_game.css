@@ -25,9 +25,9 @@ div#memory_board {
     height: 530px;
     position: center;
 }
+
 .flip3d {
 }
-
     .flip3d > .front {
         background: url(Paper_Mario_Cards.png) no-repeat center;
         background-color: royalblue;
