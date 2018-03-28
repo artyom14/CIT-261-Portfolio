@@ -21,14 +21,14 @@ function newBoard() {
     var output = '';
     memory_array.memory_card_shuffle();
     for (var i = 0; i < memory_array.length; i++) {
-        output += '<div id="card_' + i + '" onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
+        output += '<div id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
     }
     document.getElementById('memory_board').innerHTML = output;
 }
 
 function memoryFlipcard(card, val) {
     if (card.innerHTML == "" && memory_values.length < 2) {
-        card.style.background = 'yellow'
+        card.style.background = 'yellow center';
         card.innerHTML = val;
         if (memory_values.length == 0) {
             memory_values.push(val);

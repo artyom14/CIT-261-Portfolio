@@ -2,17 +2,18 @@
     background:#CCC;
     border:#999 1px solid;
     width:800px;
-    height:540px;
+    height:730px;
     padding:24px;
     margin:0px auto;
+    flex:1 1 auto;
 }
 div#memory_board > div{
     background:url(Paper_Mario_Cards.png) no-repeat center;
     background-color:royalblue;
-    background-size:71px;
+    background-size:70px;
     border:#000 1px solid;
-    width:71px;
-    height:71px;
+    width:70px;
+    height:120px;
     float:left;
     margin:10px;
     padding:20px;
