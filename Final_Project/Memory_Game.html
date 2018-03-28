@@ -3,11 +3,11 @@
 <html>
 <head>
     <title>Memory Game</title>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="CSS/memory_game.css" />
     <script src="JS/memory_game.js"></script>
 </head>
-<body>
+<body onload="newBoard();">
     <h1>😜 Mario Emoji Memory Game 🎮</h1>
     <p>
         <span id="moves">0</span><span> Moves | Time: </span>
@@ -15,6 +15,5 @@
     </p>
     <div class="flip3d" id="memory_board"></div>
     <h3>Developed by Julian Romero</h3>
-    <script>document.body.requestFullscreen; newBoard();</script>
 </body>
 </html>

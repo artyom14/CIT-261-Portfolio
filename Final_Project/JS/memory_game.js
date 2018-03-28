@@ -4,8 +4,7 @@ var memory_values = [];
 var memory_card_ids = [];
 var cards_flipped = 0;
 var moves = 0;
-var timer = 0;
-
+var seconds = 0;
 //Shuffle memory_array values
 Array.prototype.memory_card_shuffle = function () {
     var i = this.length, j, temp;
@@ -28,6 +27,7 @@ function newBoard() {
         output += '<div class="front" id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
     }
     document.getElementById('memory_board').innerHTML = output;
+    initTime();
 }
 
 function memoryFlipcard(card, val) {
@@ -49,7 +49,8 @@ function memoryFlipcard(card, val) {
                 memory_card_ids = [];
                 //Check for board complete
                 if (cards_flipped == memory_array.length) {
-                    alert("Congratulations! You did it! \nIt took you " + moves + " moves.");
+                    clearInterval(nowTime);
+                    alert("Congratulations! \nYou to " + moves + " moves and " + seconds + " seconds.");
                     document.getElementById('memory_board').innerHTML = "";
                     newBoard();
                 }
@@ -70,4 +71,12 @@ function memoryFlipcard(card, val) {
             }
         }
     }
+}
+
+function initTime() {
+    seconds = 0;
+    nowTime = setInterval(function () {
+        document.getElementById('timer').innerHTML = seconds;
+        seconds++;
+    }, 1000)
 }
