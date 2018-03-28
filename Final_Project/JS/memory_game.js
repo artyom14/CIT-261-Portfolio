@@ -1,8 +1,10 @@
-// Memory Game JavaScript
-var memory_array = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L'];
+﻿// Memory Game JavaScript
+var memory_array = ['😀', '😀', '🤓 ', '🤓 ', '💩', '💩', '🧐', '🧐', '🍄', '🍄', '🌈 ', '🌈 ', '🌮', '🌮', '🚀 ', '🚀 '];
 var memory_values = [];
 var memory_card_ids = [];
 var cards_flipped = 0;
+var moves = 0;
+var timer = 0;
 
 //Shuffle memory_array values
 Array.prototype.memory_card_shuffle = function () {
@@ -18,17 +20,21 @@ Array.prototype.memory_card_shuffle = function () {
 //Create new board within div
 function newBoard() {
     cards_flipped = 0;
+    moves = 0;
+    document.getElementById('moves').innerHTML = moves;
     var output = '';
     memory_array.memory_card_shuffle();
     for (var i = 0; i < memory_array.length; i++) {
-        output += '<div id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
+        output += '<div class="front" id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
     }
     document.getElementById('memory_board').innerHTML = output;
 }
 
 function memoryFlipcard(card, val) {
     if (card.innerHTML == "" && memory_values.length < 2) {
-        card.style.background = 'yellow center';
+        moves++;
+        document.getElementById('moves').innerHTML = moves;
+        card.className = "back";
         card.innerHTML = val;
         if (memory_values.length == 0) {
             memory_values.push(val);
@@ -43,7 +49,7 @@ function memoryFlipcard(card, val) {
                 memory_card_ids = [];
                 //Check for board complete
                 if (cards_flipped == memory_array.length) {
-                    alert("You did it! Congratulations!");
+                    alert("Congratulations! You did it! \nIt took you " + moves + " moves.");
                     document.getElementById('memory_board').innerHTML = "";
                     newBoard();
                 }
@@ -52,13 +58,9 @@ function memoryFlipcard(card, val) {
                     //Flip the 2 cards back over
                     var card_1 = document.getElementById(memory_card_ids[0]);
                     var card_2 = document.getElementById(memory_card_ids[1]);
-                    card_1.style.background = 'url(./CSS/Paper_Mario_Cards.png) no-repeat center';
-                    card_1.style.backgroundSize = '70px';
-                    card_1.style.backgroundColor = 'royalblue';
+                    card_1.className = "front";
+                    card_2.className = "front";
                     card_1.innerHTML = "";
-                    card_2.style.background = 'url(./CSS/Paper_Mario_Cards.png) no-repeat center';
-                    card_2.style.backgroundSize = '70px';
-                    card_2.style.backgroundColor = 'royalblue';
                     card_2.innerHTML = "";
                     //Clear both arrays
                     memory_values = [];

@@ -1,18 +1,61 @@
-﻿div#memory_board{
-    flex:1 1 auto;
+﻿body{
+    background-color:deepskyblue;
 }
-div#memory_board > div{
-    background:url(Paper_Mario_Cards.png) no-repeat center;
-    background-color:royalblue;
-    background-size:70px;
-    border:#000 1px solid;
-    width:70px;
-    height:70px;
-    float:left;
-    margin:10px;
-    padding:20px;
-    font-size:64px;
-    cursor:pointer;
+
+h1 {
+    text-align: center;
+    font-family: Cooper;
+    color:darkred;
+}
+h3{
     text-align:center;
-    border-radius: 7px;
+    font-family: Cooper;
+    color:darkslateblue;
 }
+p{
+    text-align: center;
+    font-family: Cooper;
+}
+
+div#memory_board {
+    background: url(Mario_bg.png) no-repeat center;
+    border: #000 1px solid;
+    margin: auto;
+    width: 530px;
+    height: 530px;
+    position: center;
+}
+.flip3d {
+}
+
+    .flip3d > .front {
+        background: url(Paper_Mario_Cards.png) no-repeat center;
+        background-color: royalblue;
+        background-size: 70px;
+        border: #000 1px solid;
+        width: 70px;
+        height: 70px;
+        float: left;
+        margin: 10px;
+        padding: 20px;
+        font-size: 64px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 7px;
+    }
+
+    .flip3d > .back {
+        background: no-repeat center;
+        background-color: seagreen;
+        background-size: 70px;
+        border: #000 1px solid;
+        width: 70px;
+        height: 70px;
+        float: left;
+        margin: 10px;
+        padding: 20px;
+        font-size: 50px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 7px;
+    }
