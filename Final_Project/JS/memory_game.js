@@ -50,7 +50,7 @@ function memoryFlipcard(card, val) {
                 //Check for board complete
                 if (cards_flipped == memory_array.length) {
                     clearInterval(nowTime);
-                    alert("Congratulations! \nYou to " + moves + " moves and " + seconds + " seconds.");
+                    alert("Congratulations! \nYou took " + moves + " moves and " + seconds + " seconds.");
                     document.getElementById('memory_board').innerHTML = "";
                     newBoard();
                 }
