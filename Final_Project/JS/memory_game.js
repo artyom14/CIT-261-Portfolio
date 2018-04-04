@@ -1,14 +1,58 @@
 ﻿// Memory Game JavaScript
-var memory_array = ['🃏 ', '🃏 ', '🤓 ', '🤓 ', '💩', '💩', '🐢', '🐢', '🍄', '🍄', '🌈 ', '🌈 ', '🌮', '🌮', '🚀 ', '🚀 '];
+var memory_array = [];
+var emoji_array = [];
 var memory_values = [];
 var memory_card_ids = [];
 var cards_flipped = 0;
 var moves = 0;
 var seconds = 0;
+
+//get emojis array from JSON webservice
+var xmlhttp = new XMLHttpRequest();
+var url = "https://unpkg.com/emoji.json/emoji-compact.json";
+xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        //use JSON.parse to store server data into local array 'myArr'
+        emoji_array = JSON.parse(this.responseText);
+        //pass myArr containing text data parsed by JSON to myFunction
+        for (k = 0; k < emoji_array.length; k++) {
+            switch (emoji_array[k]) {
+                case "🥰":
+                    emoji_array.splice(k, 1);
+                case "🥵":
+                    emoji_array.splice(k, 1);
+                case "🥶":
+                    emoji_array.splice(k, 1);
+                case "🥳":
+                    emoji_array.splice(k, 1);
+                case "🥴":
+                    emoji_array.splice(k, 1);
+                case "🥺":
+                    emoji_array.splice(k, 1);
+            }
+        }
+        newBoard();
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+//select random emojis
+function loadEmojis() {
+    emoji_array.splice(140);
+    emoji_array.memory_card_shuffle();
+    for (j = 0; j < emoji_array.length; j++) {
+        memory_array[j] = emoji_array[j];
+    }
+    memory_array.splice(8);
+    memory_array = memory_array.concat(memory_array);
+}
+
+
 //Shuffle memory_array values
 Array.prototype.memory_card_shuffle = function () {
     var i = this.length, j, temp;
-    while (--i > 0) {
+    for (i = this.length - 1; i > 0; --i) {
         j = Math.floor(Math.random() * (i + 1));
         temp = this[j];
         this[j] = this[i];
@@ -20,8 +64,12 @@ Array.prototype.memory_card_shuffle = function () {
 function newBoard() {
     cards_flipped = 0;
     moves = 0;
+    memory_values = [];
+    memory_card_ids = [];
     document.getElementById('moves').innerHTML = moves;
+    document.getElementById('timer').innerHTML = 0;
     var output = '';
+    loadEmojis();
     memory_array.memory_card_shuffle();
     for (var i = 0; i < memory_array.length; i++) {
         output += '<div class="front" id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
@@ -48,29 +96,28 @@ function memoryFlipcard(card, val) {
                 memory_values = [];
                 memory_card_ids = [];
                 //Check for board complete
-                if (cards_flipped == memory_array.length) {
+                if (cards_flipped == memory_array.length) {                    
                     clearInterval(nowTime);
                     alert("Congratulations! \nYou took " + moves + " moves and " + seconds + " seconds.");
                     document.getElementById('memory_board').innerHTML = "";
                     newBoard();
                 }
-            } else {
-                function flip2Back() {
-                    //Flip the 2 cards back over
-                    var card_1 = document.getElementById(memory_card_ids[0]);
-                    var card_2 = document.getElementById(memory_card_ids[1]);
-                    card_1.className = "front";
-                    card_2.className = "front";
-                    card_1.innerHTML = "";
-                    card_2.innerHTML = "";
-                    //Clear both arrays
-                    memory_values = [];
-                    memory_card_ids = [];
-                }
-                setTimeout(flip2Back, 500);
-            }
+            } else { setTimeout(flip2Back, 300);}
         }
     }
+}
+
+function flip2Back() {
+    //Flip the 2 cards back over
+    var card_1 = document.getElementById(memory_card_ids[0]);
+    var card_2 = document.getElementById(memory_card_ids[1]);
+    card_1.className = "front";
+    card_2.className = "front";
+    card_1.innerHTML = "";
+    card_2.innerHTML = "";
+    //Clear both arrays
+    memory_values = [];
+    memory_card_ids = [];
 }
 
 function initTime() {

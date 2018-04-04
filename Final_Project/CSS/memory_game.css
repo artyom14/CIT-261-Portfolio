@@ -5,12 +5,14 @@
 h1 {
     text-align: center;
     font-family: Cooper;
-    color:darkred;
+    font-size: x-large;
+    color: darkred;
 }
-h3{
-    text-align:center;
+h3 {
+    text-align: center;
     font-family: Cooper;
-    color:darkslateblue;
+    font-size: medium;
+    color: darkslateblue;
 }
 p{
     text-align: center;
