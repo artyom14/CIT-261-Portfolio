@@ -5,7 +5,7 @@
 h1 {
     text-align: center;
     font-family: Cooper;
-    font-size: x-large;
+    font-size: large;
     color: darkred;
 }
 h3 {
@@ -23,8 +23,8 @@ div#memory_board {
     background: url(Mario_bg.png) no-repeat center;
     border: #000 1px solid;
     margin: auto;
-    width: 530px;
-    height: 530px;
+    width: 320px;
+    height: 415px;
     position: center;
 }
 
@@ -33,12 +33,12 @@ div#memory_board {
     .flip3d > .front {
         background: url(Paper_Mario_Cards.png) no-repeat center;
         background-color: royalblue;
-        background-size: 70px;
+        background-size: 50px;
         border: #000 1px solid;
-        width: 70px;
-        height: 70px;
+        min-width: 26px;
+        min-height: 50px;
         float: left;
-        margin: 10px;
+        margin: 6px;
         padding: 20px;
         font-size: 64px;
         cursor: pointer;
@@ -51,10 +51,10 @@ div#memory_board {
         background-color: seagreen;
         background-size: 70px;
         border: #000 1px solid;
-        width: 70px;
-        height: 70px;
+        min-width: 26px;
+        min-height: 70px;
         float: left;
-        margin: 10px;
+        margin: 7px;
         padding: 20px;
         font-size: 50px;
         cursor: pointer;
