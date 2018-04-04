@@ -35,12 +35,12 @@ div#memory_board {
         background-color: royalblue;
         background-size: 50px;
         border: #000 1px solid;
-        min-width: 26px;
-        min-height: 50px;
+        min-width: 52px;
+        min-height: 75px;
         float: left;
-        margin: 6px;
-        padding: 20px;
-        font-size: 64px;
+        margin: 3px;
+        padding: 10px;
+        font-size: 50px;
         cursor: pointer;
         text-align: center;
         border-radius: 7px;
@@ -48,16 +48,18 @@ div#memory_board {
 
     .flip3d > .back {
         background: no-repeat center;
-        background-color: seagreen;
-        background-size: 70px;
+        background-color: aquamarine;
+        background-size: 50px;
         border: #000 1px solid;
-        min-width: 26px;
-        min-height: 70px;
+        min-width: 52px;
+        min-height: 75px;
         float: left;
-        margin: 7px;
-        padding: 20px;
-        font-size: 50px;
+        margin: 3px;
+        padding: 10px;
+        font-size: 30px;
+        line-height: 75px;
         cursor: pointer;
         text-align: center;
         border-radius: 7px;
+        opacity:0.85;
     }
