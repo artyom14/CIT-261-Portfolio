@@ -14,7 +14,7 @@ xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         //use JSON.parse to store server data into local array 'myArr'
         emoji_array = JSON.parse(this.responseText);
-        //pass myArr containing text data parsed by JSON to myFunction
+        //remove some unrecgonized emojis
         for (k = 0; k < emoji_array.length; k++) {
             switch (emoji_array[k]) {
                 case "🥰":
@@ -37,7 +37,7 @@ xmlhttp.onreadystatechange = function () {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-//select random emojis
+//select random playful emojis
 function loadEmojis() {
     emoji_array.splice(140);
     emoji_array.memory_card_shuffle();
@@ -112,7 +112,7 @@ function memoryFlipcard(card, val) {
                     clearInterval(nowTime);
                     document.getElementById('timer').innerHTML = seconds;
                     //alert("Congratulations! \nYou took " + moves + " moves and " + seconds + " seconds.");
-                    document.getElementById('memory_board').innerHTML = "<h1><p>Congratulations! <br/>You took " + moves + " moves and " + seconds + " seconds.<b>🎈🤡</b><br/>Press 'Restart' to Play Again!</h1>";
+                    document.getElementById('memory_board').innerHTML = "<h1><p>Congratulations! <br/>You took " + moves + " moves and " + seconds + " seconds.<br/>Press 'Restart' to Play Again!<br/><div class = 'clown'>🎈🤡</div></h1 > ";
                     //document.getElementById('memory_board').innerHTML = "";
                     //newBoard();
                 }
