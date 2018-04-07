@@ -38,12 +38,12 @@
     transition: transform .5s linear 0s;
 }
 
-.flip3d:hover > .front {
+.flip3d:visited > .front {
     -webkit-transform: perspective(600px) rotateY(-180deg);
     transform: perspective(600px) rotateY(-180deg);
 }
 
-.flip3d:hover > .back {
+.flip3d:visited > .back {
     -webkit-transform: perspective(600px) rotateY(0deg);
     transform: perspective(600px) rotateY(0deg);
 }

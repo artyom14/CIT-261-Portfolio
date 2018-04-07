@@ -12,7 +12,7 @@
     <p>
         <span id="moves">0</span><span> Moves | Time: </span>
         <span id="timer">0</span> <span>secs | </span>
-        <span ontouchend="clearInterval(nowTime); newBoard();">Restart</span>
+        <span id="restart" ontouchend="clearInterval(nowTime); newBoard();" onclick="clearInterval(nowTime); newBoard();">Restart</span>
     </p>
     <div class="flip3d" id="memory_board"></div>
     <h3>Developed by Julian Romero</h3>

@@ -51,7 +51,7 @@ function loadEmojis() {
 
 //Shuffle memory_array values
 Array.prototype.memory_card_shuffle = function () {
-    var i = this.length, j, temp;
+    let i = this.length, j, temp;
     for (i = this.length - 1; i > 0; --i) {
         j = Math.floor(Math.random() * (i + 1));
         temp = this[j];
@@ -71,9 +71,19 @@ function newBoard() {
     var output = '';
     loadEmojis();
     memory_array.memory_card_shuffle();
-    for (var i = 0; i < memory_array.length; i++) {
-        output += '<div class="front" id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
+    //output = '<table>';
+    for (let i = 0; i < memory_array.length; ) {
+        output += '<tr>';
+        for (let j = 0; j < 4; j++) {
+            //output += '<td>';
+            output += '<div class="front" id="card_' + i + '" ontouchend="memoryFlipcard(this,\'' + memory_array[i] + '\')" " onclick="memoryFlipcard(this,\'' + memory_array[i] + '\')"></div>';
+            //output += '<div class="back" id="card_' + i + '">' + memory_array[i] + '</div>';
+            output += '</td>';
+            i++;
+        }
+        //output += '</tr>';
     }
+    //output += '</table>';
     document.getElementById('memory_board').innerHTML = output;
     initTime();
 }
@@ -84,6 +94,8 @@ function memoryFlipcard(card, val) {
         document.getElementById('moves').innerHTML = moves;
         card.className = "back";
         card.innerHTML = val;
+
+
         if (memory_values.length == 0) {
             memory_values.push(val);
             memory_card_ids.push(card.id);
@@ -98,11 +110,13 @@ function memoryFlipcard(card, val) {
                 //Check for board complete
                 if (cards_flipped == memory_array.length) {                    
                     clearInterval(nowTime);
-                    alert("Congratulations! \nYou took " + moves + " moves and " + seconds + " seconds.");
-                    document.getElementById('memory_board').innerHTML = "";
-                    newBoard();
+                    document.getElementById('timer').innerHTML = seconds;
+                    //alert("Congratulations! \nYou took " + moves + " moves and " + seconds + " seconds.");
+                    document.getElementById('memory_board').innerHTML = "<h1><p>Congratulations! <br/>You took " + moves + " moves and " + seconds + " seconds.<b>🎈🤡</b><br/>Press 'Restart' to Play Again!</h1>";
+                    //document.getElementById('memory_board').innerHTML = "";
+                    //newBoard();
                 }
-            } else { setTimeout(flip2Back, 300);}
+            } else { setTimeout(flip2Back, 400);}
         }
     }
 }
